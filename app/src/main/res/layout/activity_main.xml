@@ -34,7 +34,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="24dp"
         android:contentDescription="Thêm phòng mới"
-        android:src="@android:drawable/ic_input_add"
         app:backgroundTint="?attr/colorPrimary"
         app:tint="@android:color/white" />
 
