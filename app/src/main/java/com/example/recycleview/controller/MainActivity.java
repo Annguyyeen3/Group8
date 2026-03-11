@@ -1,11 +1,9 @@
-package com.example.roomrental.controller;
+package com.example.recycleview.controller;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.CheckBox;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -31,29 +29,26 @@ public class MainActivity extends AppCompatActivity {
         adapter = new RoomAdapter(roomList, new RoomAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                showAddEditDialog(position); // Update - Sửa thông tin phòng [cite: 35]
+                showAddEditDialog(position);
             }
 
             @Override
             public void onItemLongClick(int position) {
-                showDeleteDialog(position); // Delete - Xóa phòng khi nhấn giữ [cite: 38, 39]
+                showDeleteDialog(position);
             }
         });
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter); // Cập nhật RecyclerView [cite: 25]
+        recyclerView.setAdapter(adapter);
 
         FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
-        fabAdd.setOnClickListener(v -> showAddEditDialog(-1)); // Create - Thêm phòng [cite: 21]
+        fabAdd.setOnClickListener(v -> showAddEditDialog(-1));
     }
 
     private void showAddEditDialog(int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_room, null);
         builder.setView(view);
-
-        // Khai báo các biến ánh xạ EditText từ view ở đây (ví dụ: etMaPhong, etTenPhong,...)
-        // Nếu position != -1, setText cho các EditText bằng dữ liệu của roomList.get(position) [cite: 36]
 
         builder.setPositiveButton("Lưu", (dialog, which) -> {
             // Validate dữ liệu (kiểm tra rỗng)
