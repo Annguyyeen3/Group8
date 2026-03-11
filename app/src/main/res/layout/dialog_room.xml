@@ -1,90 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="20dp">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="24dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thông Tin Phòng Trọ"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
             android:gravity="center"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="16dp"/>
+            android:text="Thông Tin Phòng Trọ"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/edtMaPhong"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mã phòng (VD: P101)"
-            android:inputType="text"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"
+            android:hint="Mã phòng (VD: P101)">
 
-        <EditText
-            android:id="@+id/edtTenPhong"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtMaPhong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tên phòng"
-            android:inputType="text"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"
+            android:hint="Tên phòng">
 
-        <EditText
-            android:id="@+id/edtGiaThue"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtTenPhong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Giá thuê (VNĐ)"
-            android:inputType="numberDecimal"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"
+            android:hint="Giá thuê (VNĐ)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtGiaThue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Tình trạng phòng:"
-            android:textSize="16sp"
             android:textColor="@android:color/black"
-            android:layout_marginTop="8dp"/>
+            android:textSize="16sp" />
 
         <RadioGroup
             android:id="@+id/rgTinhTrang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/rbConTrong"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Còn trống"
-                android:checked="true" /> <RadioButton
-            android:id="@+id/rbDaThue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Đã thuê"
-            android:layout_marginStart="24dp"/>
+                android:checked="true"
+                android:text="Còn trống" />
+
+            <RadioButton
+                android:id="@+id/rbDaThue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="Đã thuê" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/edtNguoiThue"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tên người thuê (bỏ trống nếu chưa có)"
-            android:inputType="textPersonName"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"
+            android:hint="Tên người thuê">
 
-        <EditText
-            android:id="@+id/edtSoDienThoai"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtNguoiThue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Số điện thoại"
-            android:inputType="phone" />
+            android:hint="Số điện thoại">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtSoDienThoai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 </ScrollView>

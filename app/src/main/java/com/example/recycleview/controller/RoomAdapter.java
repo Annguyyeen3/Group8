@@ -1,4 +1,4 @@
-package com.example.roomrental.controller;
+package com.example.recycleview.controller;
 
 import android.graphics.Color;
 import android.view.LayoutInflater;
