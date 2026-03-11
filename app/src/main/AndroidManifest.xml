@@ -14,7 +14,11 @@
 
         <!-- Sửa tên activity từ .MainActivity thành .controller.MainActivity -->
         <activity
+<<<<<<< HEAD
             android:name=".controller.MainActivity"
+=======
+            android:name="com.example.recycleview.controller.MainActivity"
+>>>>>>> 92e3cf4763df5c82ec73e8892e6d9e8609465846
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
